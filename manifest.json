@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube 广告静音与自动跳过",
+  "version": "1.1.0",
+  "description": "广告播放时静音，在跳过按钮可用时自动跳过，广告结束后恢复原有静音状态。",
+  "permissions": ["debugger"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
